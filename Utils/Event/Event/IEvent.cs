@@ -1,4 +1,4 @@
-namespace Gameknit
+namespace Gullis
 {
     public interface IEvent
     {

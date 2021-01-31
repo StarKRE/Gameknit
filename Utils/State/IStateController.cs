@@ -1,6 +1,6 @@
 using System;
 
-namespace Gameknit
+namespace Gullis
 {
     public interface IStateController
     {

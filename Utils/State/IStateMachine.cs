@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Gameknit
+namespace Gullis
 {
     public interface IStateMachine : IStateController, IState
     {

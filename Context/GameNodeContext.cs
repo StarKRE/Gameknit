@@ -2,10 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using GameNode;
+using Gullis;
 using UnityEngine;
 
-namespace Gameknit
+namespace Gullis
 {
     /// <summary>
     ///     <inheritdoc cref="IGameContext"/>
@@ -159,14 +159,14 @@ namespace Gameknit
         /// <inheritdoc cref="IGameNodeLayer.GetNode{T}"/>
         public T GetNode<T>() where T : IGameNode
         {
-            return DictionaryHelper.Find<T, IGameNode>(this.RegisteredNodeMap);
+            return EnumerableExtensions.Find<T, IGameNode>(this.RegisteredNodeMap);
         }
 
         /// <inheritdoc cref="IGameNodeLayer.TryGetNode{T}"/>
         public bool TryGetNode<T>(out T node) where T : IGameNode
         {
             var requiredType = typeof(T);
-            if (DictionaryHelper.TryFind(this.RegisteredNodeMap, requiredType, out var result))
+            if (EnumerableExtensions.TryFind(this.RegisteredNodeMap, requiredType, out var result))
             {
                 node = (T) result;
                 return true;

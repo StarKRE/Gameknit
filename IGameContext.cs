@@ -1,6 +1,6 @@
 using System;
 
-namespace Gameknit
+namespace Gullis
 {
     /// <summary>
     ///     <para>A gameplay system with lifecycle.</para>

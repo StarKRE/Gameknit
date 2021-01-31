@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Gameknit
+namespace Gullis
 {
     /// <summary>
     ///     <para>Keeps unique game interfaces.</para>
@@ -26,7 +26,7 @@ namespace Gameknit
         ///     <para>Provides a game context reference.</para>
         /// </summary>
         /// <typeparam name="T">Game Context type.</typeparam>
-        T ProvideGameContext<T>() where T : IGameContext;
+        T ProvideGameContext<T>();
 
         /// <summary>
         ///     <para>Returns registered interfaces.</para>
@@ -189,7 +189,7 @@ namespace Gameknit
         #endregion
 
         /// <inheritdoc cref="IGameInterfaceSystem.ProvideGameContext{T}"/>
-        public T ProvideGameContext<T>() where T : IGameContext
+        public T ProvideGameContext<T>()
         {
             return (T) this.attachedGameContext;
         }

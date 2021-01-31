@@ -1,4 +1,4 @@
-namespace Gameknit
+namespace Gullis
 {
     public abstract class BaseEventHandler<TEvent> : EventHandler where TEvent : IEvent
     {

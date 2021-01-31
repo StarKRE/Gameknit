@@ -1,16 +1,28 @@
 using System;
 using System.Collections.Generic;
 
-namespace GameNode
+namespace Gullis
 {
-    internal static class DictionaryHelper
+    public static class EnumerableExtensions
     {
-        internal static R Find<R, T>(Dictionary<Type, T> map) where R : T
+        public static void Insert<T>(List<T> list, T item, int index = -1)
+        {
+            if (index < 0)
+            {
+                list.Add(item);
+            }
+            else
+            {
+                list.Insert(index, item);
+            }
+        }
+        
+        public static R Find<R, T>(Dictionary<Type, T> map) where R : T
         {
             return (R) Find(map, typeof(R));
         }
 
-        internal static T Find<T>(Dictionary<Type, T> map, Type requiredType)
+        public static T Find<T>(Dictionary<Type, T> map, Type requiredType)
         {
             if (map.ContainsKey(requiredType))
             {
@@ -29,7 +41,7 @@ namespace GameNode
             throw new Exception("Value is not found!");
         }
 
-        internal static bool TryFind<T>(Dictionary<Type, T> map, Type requiredType, out T item)
+        public static bool TryFind<T>(Dictionary<Type, T> map, Type requiredType, out T item)
         {
             if (map.ContainsKey(requiredType))
             {

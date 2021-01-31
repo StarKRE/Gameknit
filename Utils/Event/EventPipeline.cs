@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using GameNode;
-using Gameknit;
+using Gullis;
 using UnityEngine;
 
-namespace Gameknit
+namespace Gullis
 {
     public abstract class EventPipeline : MonoBehaviour, IEventPipeline
     {
@@ -39,7 +38,7 @@ namespace Gameknit
 
         public T GetPipe<T>() where T : IEventPipe
         {
-            return DictionaryHelper.Find<T, IEventPipe>(this.pipeMap);
+            return EnumerableExtensions.Find<T, IEventPipe>(this.pipeMap);
         }
 
         public IEnumerable<T> GetPipes<T>() where T : IEventPipe

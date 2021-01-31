@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Gameknit
+namespace Gullis
 {
     public abstract class BaseEventPipedHandler<TEventPipeId, TEvent> :
         BaseEventHandler<TEvent>,

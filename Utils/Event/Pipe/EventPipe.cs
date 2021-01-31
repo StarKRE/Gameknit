@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Gameknit
+namespace Gullis
 {
     public abstract class EventPipe : MonoBehaviour, IEventPipe
     {

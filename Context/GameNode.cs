@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Gameknit
+namespace Gullis
 {
     /// <summary>
     ///     <para>A game component of game system <see cref="IGameContext"/>.</para>
@@ -181,7 +181,7 @@ namespace Gameknit
         /// <summary>
         ///     <para>Gets game context reference.</para>
         /// </summary>
-        protected T GetGameContext<T>() where T : IGameNodeContext
+        protected T GetContext<T>()
         {
             return (T) this.GameContext;
         }

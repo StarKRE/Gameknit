@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Gameknit
+namespace Gullis
 {
     /// <summary>
     ///     <para>Provides gameplay interface with player.
@@ -158,7 +158,7 @@ namespace Gameknit
         /// <summary>
         ///     <para>Gets game context reference through interface system.</para>
         /// </summary>
-        protected T GetGameContext<T>() where T : IGameContext
+        protected T GetContext<T>()
         {
             return this.InterfaceSystem.ProvideGameContext<T>();
         }
@@ -166,7 +166,7 @@ namespace Gameknit
         /// <summary>
         ///     <para>Gets parent interface system.</para>
         /// </summary>
-        protected T GetInterfaceSystem<T>() where T : IGameInterfaceSystem
+        protected T GetSystem<T>()
         {
             return (T) this.InterfaceSystem;
         }

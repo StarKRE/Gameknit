@@ -1,9 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Gameknit
+namespace Gullis
 {
-    public static class ParticleUtils
+    public static class ParticleExtensions
     {
         public static IEnumerator PlayOneShot(this ParticleSystem particleSystem)
         {

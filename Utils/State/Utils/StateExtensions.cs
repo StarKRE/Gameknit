@@ -1,4 +1,4 @@
-namespace Gameknit
+namespace Gullis
 {
     public static class StateExtensions
     {

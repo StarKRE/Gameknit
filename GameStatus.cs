@@ -1,4 +1,4 @@
-namespace Gameknit
+namespace Gullis
 {
     /// <summary>
     ///     <para>A lifecycle status of game context.</para>

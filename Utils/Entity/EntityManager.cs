@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Gameknit
+namespace Gullis
 {
     /// <summary>
     ///     <para>Manages game entity collection.</para>

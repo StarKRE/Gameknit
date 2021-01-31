@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Gameknit
+namespace Gullis
 {
     public abstract class MonoState : MonoBehaviour, IState
     {

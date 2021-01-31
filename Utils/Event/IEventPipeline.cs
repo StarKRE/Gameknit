@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Gameknit
+namespace Gullis
 {
     public interface IEventPipeline
     {

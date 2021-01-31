@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using GameNode;
+using Gullis;
 using UnityEngine;
 
-namespace Gameknit
+namespace Gullis
 {
     public class MonoStateMachine : MonoState, IStateMachine
     {
@@ -86,7 +86,7 @@ namespace Gameknit
 
         public T GetState<T>() where T : IState
         {
-            return DictionaryHelper.Find<T, IState>(this.stateMap);
+            return EnumerableExtensions.Find<T, IState>(this.stateMap);
         }
 
         public IEnumerable<T> GetStates<T>() where T : IState

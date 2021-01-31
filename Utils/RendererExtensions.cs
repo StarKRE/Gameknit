@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Gameknit
+namespace Gullis
 {
-    public static class RendererUtils
+    public static class RendererExtensions
     {
         private static readonly int Color = Shader.PropertyToID("_Color");
 

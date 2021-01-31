@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Gameknit
+namespace Gullis
 {
     public abstract class EventHandler : MonoBehaviour, IEventHandler
     {

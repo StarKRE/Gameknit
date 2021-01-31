@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using Gameknit;
+using Gullis;
 
-namespace Gameknit
+namespace Gullis
 {
     public abstract class EntityPool<T> : EntityManager<T>
     {

@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using GameNode;
+using Gullis;
+using UnityEngine;
 
-namespace Gameknit
+namespace Gullis
 {
     /// <summary>
     ///     <para>Contains unique game nodes <see cref="IGameNode"/>.</para>
@@ -45,7 +46,7 @@ namespace Gameknit
         /// <inheritdoc cref="IGameNodeLayer.GetNode{T}"/>
         public T GetNode<T>() where T : IGameNode
         {
-            return DictionaryHelper.Find<T, IGameNode>(this.registeredNodeMap);
+            return EnumerableExtensions.Find<T, IGameNode>(this.registeredNodeMap);
         }
 
         /// <inheritdoc cref="IGameNodeLayer.GetNodes{T}"/>
@@ -58,7 +59,7 @@ namespace Gameknit
         public bool TryGetNode<T>(out T node) where T : IGameNode
         {
             var requiredType = typeof(T);
-            if (DictionaryHelper.TryFind(this.registeredNodeMap, requiredType, out var result))
+            if (EnumerableExtensions.TryFind(this.registeredNodeMap, requiredType, out var result))
             {
                 node = (T) result;
                 return true;
@@ -80,6 +81,32 @@ namespace Gameknit
             var type = gameNode.GetType();
             this.registeredNodeMap.Remove(type);
             base.UnregisterNode(gameNode);
+        }
+    }
+    
+    public abstract class GameNodeLayer<T> : GameNodeLayer where T : IGameNode
+    {
+        [SerializeField]
+        private bool registerChildren;
+        
+        protected override void OnRegistered()
+        {
+            base.OnRegistered();
+            if (!this.registerChildren)
+            {
+                return;
+            }
+            
+            var childNodes = this.ProvideChildNodes();
+            foreach (var node in childNodes)
+            {
+                this.RegisterNode(node);
+            }
+        }
+
+        protected virtual IEnumerable<T> ProvideChildNodes()
+        {
+            return this.GetComponentsInChildren<T>();
         }
     }
 }

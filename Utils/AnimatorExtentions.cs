@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Gameknit
+namespace Gullis
 {
-    public static class AnimatorUtils
+    public static class AnimatorExtentions
     {
         public static void PlayByDefault(this Animator animator, string animationName)
         {

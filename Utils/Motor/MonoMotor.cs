@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Gameknit
+namespace Gullis
 {
     public sealed class MonoMotor : MonoBehaviour
     {
