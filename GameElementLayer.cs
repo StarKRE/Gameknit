@@ -10,14 +10,14 @@ namespace GameElements
     public interface IGameElementLayer : IGameElementGroup
     {
         /// <summary>
-        ///     <para>Adds an element into the dictionary.</para>
+        ///     <para>Adds an element into the layer.</para>
         /// </summary>
-        bool AddElement(IGameElement element);
+        bool RegisterElement(IGameElement element);
 
         /// <summary>
-        ///     <para>Removes an element from the dictionary.</para>
+        ///     <para>Removes an element from the layer.</para>
         /// </summary>
-        bool RemoveElement(IGameElement element);
+        bool UnregisterElement(IGameElement element);
 
         /// <summary>
         ///     <para>Returns an element of "T".</para>
@@ -39,7 +39,7 @@ namespace GameElements
             this.registeredElementMap = new Dictionary<Type, IGameElement>();
         }
 
-        public bool AddElement(IGameElement element)
+        public bool RegisterElement(IGameElement element)
         {
             var type = element.GetType();
             if (this.registeredElementMap.ContainsKey(type))
@@ -53,7 +53,7 @@ namespace GameElements
             return true;
         }
         
-        public bool RemoveElement(IGameElement element)
+        public bool UnregisterElement(IGameElement element)
         {
             var type = element.GetType();
             if (!this.registeredElementMap.Remove(type))
